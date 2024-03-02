@@ -1,0 +1,30 @@
+Kurulum
+
+- tailwind json dosyası yaratmak
+npx tailwindcss init 
+
+- package.json dosyası
+npm init -y
+
+-- tailwind.config.js'de content kısmına nereden izleneceğini yazacağız.
+
+ content: ["./src/**/*.{html,js}"], -> src klasörü altında, **/* herhangi bir dosyada olabilir. Html veya js dosyasıda olabilir.
+
+- tailwind.css oluştur ve içerisine 
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+#####
+-tailwind.css dosyasını izlemek için
+npx tailwindcss -i tailwind.css -o src/style.css --watch
+
+- bu kodu sürekli yazmak yerine
+
+package.json dosyası içerisine script bölümüne
+
+"watch": "npx tailwindcss -i tailwind.css -o src/style.css --watch"
+
+ile yazarak terminalde npm run watch ile çalıştırabiliriz.
