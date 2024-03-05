@@ -2,15 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components{
-    .btn{
+@layer components {
+    .btn {
         color: red;
+    }
+
+    .modal {
+        @apply fixed inset-0 bg-twitter bg-opacity-60 flex items-center justify-center opacity-0 invisible transition-opacity
+    }
+
+    .modal-active {
+        @apply visible opacity-100
+    }
+
+    .modal-content {
+        @apply bg-white p-10 max-w-full min-w-[600px] rounded
     }
 }
 
 
 @layer base {
-    html{
+    html {
         font-family: monospace;
     }
 }

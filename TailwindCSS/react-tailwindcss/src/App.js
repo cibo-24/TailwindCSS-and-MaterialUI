@@ -1,10 +1,27 @@
+import { useState } from 'react';
 import './App.css';
+
 
 function App() {
 
+  if (localStorage.getItem('dark')) {
+    document.documentElement.classList.add('dark');
+  }
   const darkMode = () => {
     document.documentElement.classList.toggle('dark');
+    if (document.documentElement.classList.contains('dark')) {
+      localStorage.setItem('dark', true);
+    } else {
+      localStorage.removeItem('dark');
+    }
   }
+
+
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const toggleModal = () => {
+    setModalOpen(!modalOpen);
+  };
 
   return (
     // className'e btn ile bir class verip daha sonra index.css'de bu class ile ortak bir çalışma yapılabilir.
@@ -18,7 +35,7 @@ function App() {
           <form action='' className='w-1/2 '>
             <input type='text' placeholder='Search' className='w-full bg-gray-300 h-10 px-3 placeholder-gray-600 dark:bg-gray-700 dark:placeholder-gray-300 rounded-full' />
           </form>
-          <a href='#' className='bg-blue-700 text-white h-10 w-32 inline-flex items-center justify-center p-5 rounded-full hover:bg-blue-400 dark:bg-gray-700'>Login</a>
+          <button onClick={toggleModal} className='bg-blue-700 text-white h-10 w-32 inline-flex items-center justify-center p-5 rounded-full hover:bg-blue-400 dark:bg-gray-700'>Login</button>
         </div>
         <div>
           <main className="h-full flex">
@@ -41,11 +58,11 @@ function App() {
 
               {/* Dark Mode */}
               <div className="m-4 p-4">
-                <button onClick={darkMode} className="bg-gray-700 h-10 flex items-center justify-center rounded-xl text-white text-sm p-2 hover:bg-gray-600 transition-colors">
-                  <svg className='fill-current text-white mr-5 hover:text-blue-500' xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Zm0-80q88 0 158-48.5T740-375q-20 5-40 8t-40 3q-123 0-209.5-86.5T364-660q0-20 3-40t8-40q-78 32-126.5 102T200-480q0 116 82 198t198 82Zm-10-270Z" /></svg>
+                <button onClick={darkMode} className="bg-gray-700 dark:bg-gray-50 dark:text-black h-10 flex items-center justify-center rounded-xl text-white text-sm p-2 hover:bg-gray-600 transition-colors">
+                  <svg className='fill-current text-white mr-5 dark:text-black hover:text-blue-500' xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Zm0-80q88 0 158-48.5T740-375q-20 5-40 8t-40 3q-123 0-209.5-86.5T364-660q0-20 3-40t8-40q-78 32-126.5 102T200-480q0 116 82 198t198 82Zm-10-270Z" /></svg>
                   <span className='hidden dark:inline'>Light Mode</span>
                   <span className='inline dark:hidden'>Dark Mode</span>
-                  </button>
+                </button>
               </div>
 
             </aside>
@@ -106,12 +123,21 @@ function App() {
                   <p><br />“Rrow itself, let it be sorrow; let him love it; let him pursue it, ishing for its acquisitiendum. Because he will ab hold, uniess but through concer, and also of those who resist. "</p>
                   <a href='#' className='bg-white h-11 px-5 inline-flex items-center rounded text-black mt-4 hover:bg-gray-200'>Follow</a>
                 </div>
-                
+
 
               </div>
             </section>
           </main>
         </div>
+        {modalOpen && (
+          <div className="modal">
+            <div className="modal-content">
+              <h3 className="dark:text-black text-2xl mb-4">Giriş Yap</h3>
+              <button onClick={() => setModalOpen(false)} className="bg-twitter dark:bg-gray-800 px-6 inline-flex items-center rounded">Kapat</button>
+            </div>
+          </div>
+        )}
+
       </body>
     </>
   );
