@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import './App.css';
 
 
@@ -16,13 +15,6 @@ function App() {
     }
   }
 
-
-  const [modalOpen, setModalOpen] = useState(false);
-
-  const toggleModal = () => {
-    setModalOpen(!modalOpen);
-  };
-
   return (
     // className'e btn ile bir class verip daha sonra index.css'de bu class ile ortak bir çalışma yapılabilir.
     <>
@@ -35,9 +27,26 @@ function App() {
           <form action='' className='w-1/2 '>
             <input type='text' placeholder='Search' className='w-full bg-gray-300 h-10 px-3 placeholder-gray-600 dark:bg-gray-700 dark:placeholder-gray-300 rounded-full' />
           </form>
-          <button onClick={toggleModal} className='bg-blue-700 text-white h-10 w-32 inline-flex items-center justify-center p-5 rounded-full hover:bg-blue-400 dark:bg-gray-700'>Login</button>
+          <a href='#' className='bg-blue-700 hidden text-white h-10 w-32 inline-flex items-center justify-center p-5 rounded-full hover:bg-blue-400 dark:bg-gray-700'>Login</a>
+          {/* dropdownMenu */}
+          <div className='group relative'>
+              <button className='flex items-center dark:bg-gray-700 h-10 px-4 rounded text-sm'>
+                <img src='https://avatars.githubusercontent.com/u/64261687?v=4' alt='' width="20" height="24" className='rounded-full mr-3 '/>
+                kenancibooglu
+                </button>
+                <div className='opacity-0 invisible group-focus-within:opacity-100 group-focus-within:visible transition-all absolute top-full right-0 w-44 bg-gray-500 rounded p-1 space-y-1'>
+                  <a href='#' className='flex text-sm h-7 items-center px-4 rounded hover:bg-gray-100 transition-colors'>Profil</a>
+                  <a href='#' className='flex text-sm h-7 items-center px-4 rounded hover:bg-gray-100 transition-colors'>Profil Düzenle</a>
+                  <a href='#' className='flex text-sm h-7 items-center px-4 rounded hover:bg-gray-100 transition-colors'>Takipçiler</a>
+                  <a href='#' className='flex text-sm h-7 items-center px-4 rounded hover:bg-gray-100 transition-colors'>Sorular</a>
+                  <a href='#' className='flex text-sm h-7 items-center px-4 rounded hover:bg-gray-100 transition-colors'>Cevaplar</a>
+                  <a href='#' className='flex text-sm h-7 items-center px-4 rounded hover:bg-gray-100 transition-colors text-red-400'>Çıkış yap</a>
+                  
+                </div>
+          </div>
         </div>
         <div>
+          {/* Main */}
           <main className="h-full flex">
             <aside className='flex flex-col  w-64 border-r p-2 border-gray-200 dark:bg-gray-800 divide-solid divide-gray-800 dark:divide-gray-800 divide-y space-y-5 overflow-auto'>
               <nav>
@@ -128,15 +137,15 @@ function App() {
               </div>
             </section>
           </main>
+
         </div>
-        {modalOpen && (
           <div className="modal">
             <div className="modal-content">
               <h3 className="dark:text-black text-2xl mb-4">Giriş Yap</h3>
-              <button onClick={() => setModalOpen(false)} className="bg-twitter dark:bg-gray-800 px-6 inline-flex items-center rounded">Kapat</button>
+              <button className="bg-twitter dark:bg-gray-800 px-6 inline-flex items-center rounded">Kapat</button>
             </div>
           </div>
-        )}
+        
 
       </body>
     </>
