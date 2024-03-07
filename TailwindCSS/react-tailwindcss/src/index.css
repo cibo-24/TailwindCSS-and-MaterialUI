@@ -18,6 +18,9 @@
     .modal-content {
         @apply bg-white p-10 max-w-full min-w-[600px] rounded
     }
+    .slider-item{
+        @apply flex flex-col  px-4 py-7 items-center rounded   
+    }
 }
 
 
