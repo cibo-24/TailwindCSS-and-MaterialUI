@@ -1,4 +1,5 @@
 import './App.css';
+import Footer from './components/Footer';
 
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
   return (
     // className'e btn ile bir class verip daha sonra index.css'de bu class ile ortak bir çalışma yapılabilir.
     <>
-      <body className='bg-white h-full flex-col  dark:bg-gray-900 dark:text-white sm:bg-pink-300 md:bg-red-300 lg:bg-purple-300 xl:bg-indigo-300 2xl:bg-green-300 '>
+      <body className='bg-white h-full flex-col  dark:bg-gray-900 dark:text-white '>
         <div className='h-15 bg-gray-100 dark:bg-gray-900 w-full flex justify-between items-center px-5'>
           <a href='https://github.com/cibo-24' className='text-xl font-medium inline-flex items-center text-blue-900 dark:text-white' >
             .cibo24
@@ -30,19 +31,19 @@ function App() {
           <a href='#' className='bg-blue-700 hidden text-white h-10 w-32 inline-flex items-center justify-center p-5 rounded-full hover:bg-blue-400 dark:bg-gray-700'>Login</a>
           {/* dropdownMenu */}
           <div className='group relative'>
-              <button className='flex items-center dark:bg-gray-700 h-10 px-4 rounded text-sm'>
-                <img src='https://avatars.githubusercontent.com/u/64261687?v=4' alt='' width="20" height="24" className='rounded-full mr-3 '/>
-                kenancibooglu
-                </button>
-                <div className='opacity-0 invisible group-focus-within:opacity-100 group-focus-within:visible transition-all absolute top-full right-0 w-44 bg-gray-500 rounded p-1 space-y-1'>
-                  <a href='#' className='flex text-sm h-7 items-center px-4 rounded hover:bg-gray-100 transition-colors'>Profil</a>
-                  <a href='#' className='flex text-sm h-7 items-center px-4 rounded hover:bg-gray-100 transition-colors'>Profil Düzenle</a>
-                  <a href='#' className='flex text-sm h-7 items-center px-4 rounded hover:bg-gray-100 transition-colors'>Takipçiler</a>
-                  <a href='#' className='flex text-sm h-7 items-center px-4 rounded hover:bg-gray-100 transition-colors'>Sorular</a>
-                  <a href='#' className='flex text-sm h-7 items-center px-4 rounded hover:bg-gray-100 transition-colors'>Cevaplar</a>
-                  <a href='#' className='flex text-sm h-7 items-center px-4 rounded hover:bg-gray-100 transition-colors text-red-400'>Çıkış yap</a>
-                  
-                </div>
+            <button className='flex items-center dark:bg-gray-700 h-10 px-4 rounded text-sm'>
+              <img src='https://avatars.githubusercontent.com/u/64261687?v=4' alt='' width="20" height="24" className='rounded-full mr-3 ' />
+              kenancibooglu
+            </button>
+            <div className='opacity-0 invisible group-focus-within:opacity-100 group-focus-within:visible transition-all absolute top-full right-0 w-44 bg-gray-500 rounded p-1 space-y-1'>
+              <a href='#' className='flex text-sm h-7 items-center px-4 rounded hover:bg-gray-100 transition-colors'>Profil</a>
+              <a href='#' className='flex text-sm h-7 items-center px-4 rounded hover:bg-gray-100 transition-colors'>Profil Düzenle</a>
+              <a href='#' className='flex text-sm h-7 items-center px-4 rounded hover:bg-gray-100 transition-colors'>Takipçiler</a>
+              <a href='#' className='flex text-sm h-7 items-center px-4 rounded hover:bg-gray-100 transition-colors'>Sorular</a>
+              <a href='#' className='flex text-sm h-7 items-center px-4 rounded hover:bg-gray-100 transition-colors'>Cevaplar</a>
+              <a href='#' className='flex text-sm h-7 items-center px-4 rounded hover:bg-gray-100 transition-colors text-red-400'>Çıkış yap</a>
+
+            </div>
           </div>
         </div>
         <div>
@@ -132,20 +133,26 @@ function App() {
                   <p><br />“Rrow itself, let it be sorrow; let him love it; let him pursue it, ishing for its acquisitiendum. Because he will ab hold, uniess but through concer, and also of those who resist. "</p>
                   <a href='#' className='bg-white h-11 px-5 inline-flex items-center rounded text-black mt-4 hover:bg-gray-200'>Follow</a>
                 </div>
-
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
 
               </div>
             </section>
           </main>
 
         </div>
-          <div className="modal">
-            <div className="modal-content">
-              <h3 className="dark:text-black text-2xl mb-4">Giriş Yap</h3>
-              <button className="bg-twitter dark:bg-gray-800 px-6 inline-flex items-center rounded">Kapat</button>
-            </div>
+        <div className="modal">
+          <div className="modal-content">
+            <h3 className="dark:text-black text-2xl mb-4">Giriş Yap</h3>
+            <button className="bg-twitter dark:bg-gray-800 px-6 inline-flex items-center rounded">Kapat</button>
           </div>
-        
+        </div>
+        <Footer />
+
 
       </body>
     </>
